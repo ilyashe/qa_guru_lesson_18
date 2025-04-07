@@ -1,11 +1,6 @@
 from allure_commons._allure import step
 from model import steps
 
-
-WEB_URL = 'https://demowebshop.tricentis.com/'
-API_URL = 'https://demowebshop.tricentis.com/'
-
-
 def test_add_product_to_cart():
     '''Successful adding product to cart (API)'''
     with step('Add product'):
