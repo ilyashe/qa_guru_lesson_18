@@ -61,7 +61,7 @@ def log_to_console(result):
             ==== HTTP Response ====
             Status Code: {result.status_code}
             Body:
-            {result.text}
+            {json.dumps(json.loads(result.text), indent=4, ensure_ascii=False) if result.text else "None"}
 
             ==== Cookies ====
             {'\n'.join([f'{c.name} = {c.value}' for c in result.cookies])}
