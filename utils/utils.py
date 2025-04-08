@@ -6,9 +6,9 @@ from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 import allure
 
-def demoshop_api_post(url, data, **kwargs):
+def demoshop_api_request(url, method='POST', *args, **kwargs):
     with step('API Request'):
-        result = requests.post(url=url, data=data, **kwargs)
+        result = requests.request(url=url, method=method, *args, **kwargs)
 
         log_to_allure(result)
         log_to_console(result)
